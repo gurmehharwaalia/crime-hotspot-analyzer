@@ -1,0 +1,16 @@
+services:
+  postgis:
+    image: postgis/postgis:16-3.4
+    container_name: kags-postgis
+    environment:
+      POSTGRES_USER: kags
+      POSTGRES_PASSWORD: kags
+      POSTGRES_DB: kagsdb
+    ports:
+      - "5432:5432"
+
+  mongodb:
+    image: mongo:7
+    container_name: kags-mongo
+    ports:
+      - "27017:27017"
